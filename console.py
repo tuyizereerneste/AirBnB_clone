@@ -27,6 +27,10 @@ class HBNBCommand(cmd.Cmd):
             "Review": Review
             }
 
+    def emptyline(self):
+        """ENTER shouldn’t execute anything"""
+        pass
+
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
@@ -35,10 +39,6 @@ class HBNBCommand(cmd.Cmd):
         """Signals the End of File"""
         print("")
         return True
-
-    def emptyline(self):
-        """ENTER shouldn’t execute anything"""
-        pass
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel,
